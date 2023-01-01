@@ -1,6 +1,6 @@
 public class SimpleArray {
     public static void main(String[] args) {
-        String []names = new String [13];
+        String[] names = new String[13];
         names[0] = "Dwalin";
         names[1] = "Balin";
         names[2] = "Kili";
@@ -14,6 +14,11 @@ public class SimpleArray {
         names[10] = "Bofur";
         names[11] = "Bombur";
         names[12] = "Thorin III Debowa Tarcza";
+        String name = names[3];
+        System.out.println(name);
+        int numberOfElements = names.length;
+        if (numberOfElements == 13) {
+            System.out.println("moja tablica ma 13 elementów");
+        }
     }
-
-    }
+}
