@@ -1,14 +1,16 @@
 public class LeapYear {
     public static void main(String[] args) {
-        int rok = 2023;
-        System.out.println(rok);
-        if (rok % 4 == 0) {
-            System.out.println("Rok nie Przestepny");
-        } else if (rok % 100 == 0) {
-            System.out.println("Rok przestepny");
-        } else if (rok % 400 == 0) {
-            System.out.println("Rok Przestepny");
+        int year = 2023;
+        boolean leap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    System.out.println(leap = true);
+                } else
+                    System.out.println(leap = false);
+            } else
+                System.out.println(leap = true);
         } else
-            System.out.println("Rok nie przestepny");
+            System.out.println(leap = false);
     }
 }
