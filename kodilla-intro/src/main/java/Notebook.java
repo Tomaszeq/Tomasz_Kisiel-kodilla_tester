@@ -35,7 +35,7 @@ public class Notebook {
             System.out.println("This notebook has poor value for money.");
         } if (this.year < 2018 && this.price == 1000) {
             System.out.println("This notebook has good value for money.");
-        } else if (this.year < 2018 && this.price < 1000) {
+        } else if (this.year < 2018 && this.price <= 1000) {
             System.out.println("This notebook has average value for money.");
         }
     }

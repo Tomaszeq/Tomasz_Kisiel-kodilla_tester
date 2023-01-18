@@ -1,7 +1,5 @@
 public class Grades {
-    public static void main(String[] args) {
 
-    }
     private int[] grades;
     private int size;
     public Grades() {
