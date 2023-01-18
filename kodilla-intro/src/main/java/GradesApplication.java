@@ -12,5 +12,7 @@ public class GradesApplication {
         newGrade.add(3);
         newGrade.add(2);
         newGrade.add(3);
+        System.out.println(newGrade.getAvg());
+        System.out.println(newGrade.getLastGrade());
     }
 }

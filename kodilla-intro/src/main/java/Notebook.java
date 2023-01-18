@@ -1,13 +1,23 @@
 public class Notebook {
-    public int weight;
-    public int price;
-    public int year;
+    private int weight;
+    private int price;
+    private int year;
 
     public Notebook(int weight, int price, int year) {
         this.weight = weight;
         this.price = price;
         this.year = year;
     }
+    public int getWeight(){
+        return weight;
+    }
+    public int getPrice(){
+        return price;
+    }
+    public int getYear(){
+        return year;
+    }
+
 
     public void checkPrice() {
         if (this.price < 600) {
