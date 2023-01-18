@@ -23,6 +23,6 @@ public class Grades {
         return sum;
     }
     public int getLastGrade() {
-    return this.grades[this.size -1];
+        return this.grades[this.size -1];
     }
 }
