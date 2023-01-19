@@ -8,13 +8,16 @@ public class Notebook {
         this.price = price;
         this.year = year;
     }
-    public int getWeight(){
+
+    public int getWeight() {
         return weight;
     }
-    public int getPrice(){
+
+    public int getPrice() {
         return price;
     }
-    public int getYear(){
+
+    public int getYear() {
         return year;
     }
 
@@ -41,12 +44,28 @@ public class Notebook {
     }
 
     public void checkYear() {
-        if (this.year < 2018 && this.price >= 1500) {
-            System.out.println("This notebook has poor value for money.");
-        } if (this.year < 2018 && this.price == 1000) {
-            System.out.println("This notebook has good value for money.");
-        } else if (this.year < 2018 && this.price <= 1000) {
-            System.out.println("This notebook has average value for money.");
+        if (this.year <= 2023 && this.year >= 2020) {
+            System.out.println("this notebook is new.");
+        }
+        if (this.year <= 2020 && this.year >= 2016) {
+            System.out.println("This notebook is old.");
+        }
+        if (this.year <= 2016 && this.year >= 2010) {
+            System.out.println("this notebook is very old.");
+        }
+    }
+    public void checkPriceAndYear() {
+        if (this.price >= 500 && this.price >= 1000) {
+        } else if (this.year <= 2023 && this.year < 2019) {
+            System.out.println("this notebook very old but very cheap.");
+        }
+        if (this.price > 500 && this.price >= 1500) {
+        } else if (this.year < 2023 && this.year >= 2019) {
+            System.out.println("This notebook is old and price is good.");
+        }
+        if (this.price < 1000 && this.price >= 1500) {
+        } else if (this.year <= 2023 && this.year > 2019) {
+            System.out.println("This notebook is new and expensive.");
         }
     }
 }
