@@ -28,7 +28,7 @@ public class Notebook {
         } else if (this.price >= 600 && this.price <= 1000) {
             System.out.println("This price is good.");
         } else {
-            System.out.println("this notebook is expensive.");
+            System.out.println("this notebook is very expensive.");
         }
     }
 
@@ -55,17 +55,26 @@ public class Notebook {
         }
     }
     public void checkPriceAndYear() {
-        if (this.price >= 500 && this.price >= 1000) {
-        } else if (this.year <= 2023 && this.year < 2019) {
-            System.out.println("this notebook very old but very cheap.");
+        if (this.price >= 500 && this.price < 1000) {
+            if (this.year > 2010 && this.year < 2015) {
+                System.out.println("Scrap and cheap.");
+            } else if (this.year >= 2015 && this.year <= 2023) {
+                System.out.println("This notebook is very old but very cheap.");
+            }
         }
-        if (this.price > 500 && this.price >= 1500) {
-        } else if (this.year < 2023 && this.year >= 2019) {
-            System.out.println("This notebook is old and price is good.");
+        if (this.price >=1000 && this.price < 1500) {
+            if (this.year > 2010 && this.year < 2015) {
+                System.out.println("Scrap and expensive.");
+            } else if (this.year >= 2015 && this.year <= 2023) {
+                System.out.println("This notebook is old and price is good.");
+            }
         }
-        if (this.price < 1000 && this.price >= 1500) {
-        } else if (this.year <= 2023 && this.year > 2019) {
-            System.out.println("This notebook is new and expensive.");
+        if (this.price >= 1500 && this.price < 2000) {
+            if (this.year > 2010 && this.year < 2015) {
+                System.out.println("Scrap and very expensive.");
+            } else if (this.year >= 2015 && this.year <= 2023) {
+                System.out.println("This notebook is new and very expensive.");
+            }
         }
     }
 }
