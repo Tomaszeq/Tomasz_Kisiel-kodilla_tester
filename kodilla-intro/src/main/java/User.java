@@ -15,6 +15,9 @@ public class User {
     public int getAge() {
         return this.age;
     }
+    public int averageAge() {
+        return this.averageAge();
+    }
 
     public static void main(String[] args) {
 
@@ -29,11 +32,12 @@ public class User {
 
         int sum = 0;
         for (int i = 0; i < users.length; i++) {
-            sum = sum + users[i];
+            sum = sum + users[i].getAge();
         }
-        System.out.println(User.getAge());
-        System.out.println(User.getName());
+        int averageAge = sum / users.length;
 
+        System.out.println(sum);
+        System.out.println(averageAge);
     }
 
 }

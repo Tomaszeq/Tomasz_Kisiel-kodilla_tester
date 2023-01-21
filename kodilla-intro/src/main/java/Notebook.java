@@ -44,13 +44,13 @@ public class Notebook {
     }
 
     public void checkYear() {
-        if (this.year <= 2023 && this.year >= 2020) {
+        if (this.year >= 2020 && this.year <= 2023) {
             System.out.println("this notebook is new.");
         }
-        if (this.year <= 2020 && this.year >= 2016) {
+        if (this.year >= 2016 && this.year <= 2020) {
             System.out.println("This notebook is old.");
         }
-        if (this.year <= 2016 && this.year >= 2010) {
+        if (this.year >= 2010 && this.year <= 2016) {
             System.out.println("this notebook is very old.");
         }
     }
