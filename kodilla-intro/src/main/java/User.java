@@ -42,15 +42,14 @@ public class User {
         System.out.println(sum);
         System.out.println("Średnia wieku: " + averageAge);
 
-        for (int i = 0; i < users[i].getAge(); i++) {
+        for (int i = 0; i < users.length; i++) {
 
-            if ( users[i].getAge() < averageAge);
-            System.out.println();
+            if (users[i].getAge() < averageAge) {
+                System.out.println(users[i].getAge());
 
 
+            }
         }
-
-
     }
 }
 
