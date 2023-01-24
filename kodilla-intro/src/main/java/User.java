@@ -3,9 +3,12 @@ public class User {
     private String name;
     private int age;
 
+    private int numbers;
+
     public User(String name, int age) {
         this.name = name;
         this.age = age;
+
     }
 
     public String getName() {
@@ -15,11 +18,13 @@ public class User {
     public int getAge() {
         return this.age;
     }
+
     public int averageAge() {
         return this.averageAge();
     }
 
     public static void main(String[] args) {
+
 
         User anna = new User("Anna", 20);
         User betty = new User("Betty", 33);
@@ -37,7 +42,16 @@ public class User {
         int averageAge = sum / users.length;
 
         System.out.println(sum);
-        System.out.println(averageAge);
-    }
+        System.out.println("Średnia wieku: " + averageAge);
 
+
+        int[] numbers = {20, 33, 58, 13, 18, 45};
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers < 31) {
+                System.out.println();
+            }
+        }
+    }
 }
+
