@@ -2,6 +2,7 @@
 /build/
 **/out
 **/build
+.idea
 
 ### IntelliJ IDEA ###
 .idea
