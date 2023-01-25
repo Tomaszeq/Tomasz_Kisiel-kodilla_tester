@@ -1,7 +1,7 @@
 import java.util.Random;
 public class RandomNumbers {
 
-    public static int min=50;
+    public static int min = 500;
     public static int max;
 
 
@@ -33,5 +33,4 @@ public class RandomNumbers {
             }
         }
     }
-
 }

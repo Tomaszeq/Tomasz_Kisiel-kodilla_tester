@@ -47,7 +47,6 @@ public class User {
             if (users[i].getAge() < averageAge) {
                 System.out.println(users[i].getAge());
 
-
             }
         }
     }
