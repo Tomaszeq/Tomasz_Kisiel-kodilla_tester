@@ -10,13 +10,13 @@ public class RandomNumbers {
         System.out.println(getMin());
         System.out.println(getMax());
     }
-    public static int getMin(){
+    public static int getMin() {
         return min;
     }
-    public static int getMax(){
+    public static int getMax() {
         return max;
     }
-    public static void generate(){
+    public static void generate() {
         Random random = new Random();
         int sum = 0;
         while (sum <= 50) {
