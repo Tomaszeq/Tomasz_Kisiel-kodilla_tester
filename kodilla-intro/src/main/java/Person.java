@@ -1,27 +1,19 @@
 public class Person {
-    private String name;
     private double age;
     private double height;
-
     public Person(double age, double height) {
         this.age = age;
         this.height = height;
         Person adam = new Person();
-        adam.checkHeight();
     }
-
-    public String getPerson() {
-        return name;
+    public Person() {
     }
-
     public double getAge() {
         return age;
     }
-
     public double getHeight() {
         return height;
     }
-
     public void checkAge() {
         if (this.age > 30) {
             System.out.println("User is older than 30");
