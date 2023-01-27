@@ -8,12 +8,6 @@ public class Person {
     }
     public Person() {
     }
-    public double getAge() {
-        return age;
-    }
-    public double getHeight() {
-        return height;
-    }
     public void checkAge() {
         if (this.age > 30) {
             System.out.println("User is older than 30");
@@ -21,7 +15,6 @@ public class Person {
             System.out.println("User is 30 (or younger)");
         }
     }
-
     public void checkHeight() {
         if (this.height > 160) {
             System.out.println("User is taller then 160");
