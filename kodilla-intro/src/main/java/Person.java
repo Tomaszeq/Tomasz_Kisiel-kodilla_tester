@@ -5,8 +5,6 @@ public class Person {
         this.age = age;
         this.height = height;
     }
-    public Person() {
-    }
     public void checkAge() {
         if (this.age > 30) {
             System.out.println("User is older than 30");
