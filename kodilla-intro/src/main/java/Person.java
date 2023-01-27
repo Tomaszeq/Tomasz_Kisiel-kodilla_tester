@@ -4,7 +4,6 @@ public class Person {
     public Person(double age, double height) {
         this.age = age;
         this.height = height;
-        Person adam = new Person();
     }
     public Person() {
     }
