@@ -8,9 +8,9 @@ public class Book {
     }
 
     public static void main(String[] args) {
-        Book book = new Book("Maja Lidia Kossakowska", "Siewca Wiatru");
     }
     public static Book of(String author, String title) {
+        Book book = new Book("Maja Lidia Kossakowska", "Siewca Wiatru");
         System.out.println("Author: " + author);
         System.out.println("Title: " + title);
         return book;
