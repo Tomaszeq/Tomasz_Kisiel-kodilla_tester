@@ -12,5 +12,7 @@ public class Book {
         System.out.println("Title: " + title);
         return book;
     }
+    public static void main(String[] args){
+    }
 }
 
