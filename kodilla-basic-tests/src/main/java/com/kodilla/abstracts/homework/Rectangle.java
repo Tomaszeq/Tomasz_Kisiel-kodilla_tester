@@ -2,17 +2,24 @@ package com.kodilla.abstracts.homework;
 
 public class Rectangle extends Shape {
 
-    public Rectangle() {
-        super(20,15);
+    private int length;
+    private int bradth;
+
+
+    public Rectangle(int length, int bradth) {
+        this.length = length;
+        this.bradth = bradth;
     }
     @Override
-    public void circuit() {
-        int circuit = 20 * 15;
+    public double circuit() {
+        double circuit = 2 * (length + bradth);
         System.out.println("the perimeter of the rectangle is " + circuit);
+        return circuit;
     }
     @Override
-    public void surfaceArea() {
-        int surfaceArea = (2 * 20) + (2 * 15);
+    public double surfaceArea() {
+        double surfaceArea = length * bradth;
         System.out.println("the surface of the rectangle is " + surfaceArea);
+        return surfaceArea;
     }
 }

@@ -10,6 +10,12 @@ public class Application {
         square.circuit();
         square.surfaceArea();
 
+        Circle circle = new Circle();
+        circle.circuit();
+        circle.circuit();
+
+
+
 
 
     }
