@@ -12,7 +12,7 @@ public class CalculatorTestSuite {
         int a = 5;
         int b = 8;
         int sumResult = calculator.sum(a, b);
-        assertEquals(13, sumResult, 3);
+        assertEquals(13, sumResult);
     }
     @Test
     public void testSubstract() {
@@ -20,11 +20,27 @@ public class CalculatorTestSuite {
         int a = 5;
         int b = 8;
         int subtractResult = calculator.subtract(a, b);
-        assertEquals(-3, subtractResult, 3);
+        assertEquals(-3, subtractResult);
     }
     @Test
-    public void testAnswer() {
-        double answer = Math.pow(5, 4);
-        assertEquals(625.0, answer);
+    public void testExponentiationPositive() {
+        Calculator calculator = new Calculator();
+        int a = 4;
+        double actual = calculator.exponentiation(a);
+        assertEquals(16, actual, 0.01);
+    }
+    @Test
+    public void testExponentiationNegative() {
+        Calculator calculator = new Calculator();
+        int a = -4;
+        double actual = calculator.exponentiation(a);
+        assertEquals(16, actual, 0.01);
+    }
+    @Test
+    public void testExponentiationZero() {
+        Calculator calculator = new Calculator();
+        int a = 0;
+        double actual = calculator.exponentiation(a);
+        assertEquals(0, actual, 0.01);
     }
 }
