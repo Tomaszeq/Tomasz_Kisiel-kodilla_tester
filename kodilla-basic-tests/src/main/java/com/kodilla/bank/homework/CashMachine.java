@@ -29,7 +29,19 @@ public class CashMachine {
         }
         return sum;
     }
-    public int getWithdrawning() {
+    public int getWithdrawalQty() {
+        if (this.completedTransactions.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        for (int i = 0; i < completedTransactions.length; i++) {
+            if (this.completedTransactions[i] < 0) {
+                sum ++;
+            }
+        }
+        return sum;
+    }
+    public int getPaymentQty() {
         if (this.completedTransactions.length == 0) {
             return 0;
         }
@@ -41,23 +53,24 @@ public class CashMachine {
         }
         return sum;
     }
-    public int getPayment() {
+    public double getWithdrawalAvg() {
         if (this.completedTransactions.length == 0) {
             return 0;
         }
-        int sum = 0;
-        for (int i = 0; i < completedTransactions.length; i++) {
-            if (this.completedTransactions[i] > 0) {
+        double sum = 0;
+
+        for (int i = 0; i < this.completedTransactions.length; i++) {
+            if (this.completedTransactions[i] < 0) {
                 sum += this.completedTransactions[i];
             }
         }
-        return sum;
+        return sum / completedTransactions.length;
     }
-    public double getCashOutsAvg() {
-        if (this.completedTransactions.length == 0) {
+    public double getPaymentAvg() {
+        if (this. completedTransactions.length == 0) {
             return 0;
         }
-        int sum = 0;
+        double sum = 0;
 
         for (int i = 0; i < this.completedTransactions.length; i++) {
             if (this.completedTransactions[i] > 0) {

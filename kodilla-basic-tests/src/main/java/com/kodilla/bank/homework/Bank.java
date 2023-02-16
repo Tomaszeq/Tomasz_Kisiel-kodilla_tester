@@ -1,39 +1,63 @@
 package com.kodilla.bank.homework;
 
 public class Bank {
-    private CashMachine Euronet;
-    private CashMachine BNPParibas;
-    private CashMachine Pekao;
 
-    CashMachine[] CashMachines = new CashMachine[] {Euronet, BNPParibas, Pekao};
+    private int size;
 
-    public Bank() {
-        this.Euronet = new CashMachine();
-        this.BNPParibas = new CashMachine();
-        this.Pekao = new CashMachine();
+    private CashMachine[] cashMachines = new CashMachine[0];
+    public Bank () {
+        this.cashMachines = new CashMachine[0];
+        this.size = 0;
     }
-    public void addEuronetCash (int cash) {
-        this.Euronet.add(cash);
+    public void  add (CashMachine cashMachine) {
+        this.size++;
+        CashMachine[] newTab = new CashMachine[this.size];
+        System.arraycopy(cashMachines, 0, newTab, 0, cashMachines.length);
+        newTab[this.size -1] = cashMachine;
+        this.cashMachines = newTab;
     }
-    public void addBNPParibas (int cash) {
-        this.BNPParibas.add(cash);
-    }
-    public void addPekao (int cash) {
-        this.Pekao.add(cash);
-    }
-    public double getCashMashineSaldo() {
-        return this.Euronet.getSaldo() + this.BNPParibas.getSaldo() + this.Pekao.getSaldo();
-    }
-    public int getWithdrawningCash() {
-        return this.Euronet.getWithdrawning() + this.BNPParibas.getWithdrawning() + this.Pekao.getWithdrawning();
-    }
-    public int getPaymentCash() {
-        return this.Euronet.getPayment() + this.BNPParibas.getPayment() + this.Pekao.getPayment();
-    }
-    public double getCashOutAvg() {
-        for (int i = 0; i < this.CashMachines.length; i++) {
-            new CashMachine().getCashOutsAvg();
+    public double getSaldo() {
+        if (this.cashMachines.length == 0) {
+            return 0;
         }
-        return 0;
+        double sum = 0;
+        for (int i = 0; i < this.cashMachines.length; i++) {
+            sum += this.cashMachines[i].getSaldo();
+        }
+        return sum;
+    }
+    public int getPaymentQty() {
+        if (this.cashMachines.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        for (int i = 0; i < this.cashMachines.length; i++) {
+            sum += this.cashMachines[i].getPaymentQty();
+        }
+        return sum;
+    }
+    public double getWithdrawalAvg() {
+        if (this.cashMachines.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        for (int i = 0; i < this.cashMachines.length; i++) {
+            if (this.cashMachines[i].getWithdrawalAvg() < 0) {
+                sum += this.cashMachines[i].getWithdrawalQty();
+            }
+        }
+        return sum / cashMachines.length;
+    }
+    public double getPaymentAvg() {
+        if (this.cashMachines.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        for (int i = 0; i < this.cashMachines.length; i++ ) {
+            if (this.cashMachines[i].getPaymentAvg() > 0) {
+                sum += this.cashMachines[i].getPaymentAvg();
+            }
+        }
+        return sum / cashMachines.length;
     }
 }
