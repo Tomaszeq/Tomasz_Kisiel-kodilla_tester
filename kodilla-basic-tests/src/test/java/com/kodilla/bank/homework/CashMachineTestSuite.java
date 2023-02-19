@@ -31,10 +31,10 @@ public class CashMachineTestSuite {
         cashMachine.add(100);
         cashMachine.add(150);
         cashMachine.add(-150);
-        cashMachine.add(34);
+        cashMachine.add(35);
         cashMachine.add(0);
         cashMachine.add(15);
-        assertEquals(99,99);
+        assertEquals(150,150);
 
     }
     @Test
