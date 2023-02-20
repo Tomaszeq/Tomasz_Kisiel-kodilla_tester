@@ -8,7 +8,7 @@ public class Bank {
         this.cashMachines = new CashMachine[0];
         this.size = 0;
     }
-    public void  add (CashMachine cashMachine) {
+    public void add (CashMachine cashMachine) {
         this.size++;
         CashMachine[] newTab = new CashMachine[this.size];
         System.arraycopy(cashMachines, 0, newTab, 0, cashMachines.length);

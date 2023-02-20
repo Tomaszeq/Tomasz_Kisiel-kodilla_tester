@@ -1,5 +1,4 @@
 package com.kodilla.bank.homework;
-
 import com.kodilla.basic_assertion.Calculator;
 
 public class CashMachine {
@@ -13,7 +12,7 @@ public class CashMachine {
         this.size++;
         int[] newTab = new int[this.size];
         System.arraycopy(completedTransactions, 0,newTab,0, completedTransactions.length);
-        newTab[this.size - 1] = completedTransaction;
+        newTab[this.size -1] = completedTransaction;
         this.completedTransactions = newTab;
     }
     public int[] getCompletedTransactions() {

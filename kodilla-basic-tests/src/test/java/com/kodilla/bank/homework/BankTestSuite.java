@@ -8,8 +8,8 @@ public class BankTestSuite {
     @Test
     public void testCashMachine() {
         Bank bank = new Bank();
-        int[] cashMachines = cashMachines.getCashMachines();
-        assertEquals(0, cashMachines.length);
+        String[] cashMachine = bank.cashMachines();
+        assertEquals(0, cashMachine.length);
 
     }
     @Test
@@ -19,10 +19,10 @@ public class BankTestSuite {
         cashMachines.add(2);
         cashMachines.add(3);
 
-        int[] cashMachines = cashMachines.getCashMachine();
-        assertEquals(3, cashMachines.length);
-        assertEquals(1, cashMachines[0]);
-        assertEquals(2, cashMachines[1]);
+        String[] cashMachine = cashMachine.cashMachines();
+        assertEquals(3, cashMachine.length);
+        assertEquals(1, cashMachine[0]);
+        assertEquals(2, cashMachine[1]);
     }
     @Test
     public void testSaldo() {
