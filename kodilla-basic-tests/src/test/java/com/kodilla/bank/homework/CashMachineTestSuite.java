@@ -35,7 +35,6 @@ public class CashMachineTestSuite {
         cashMachine.add(0);
         cashMachine.add(15);
         assertEquals(150,150);
-
     }
     @Test
     public void testWithdrawalQty() {
