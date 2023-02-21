@@ -12,13 +12,12 @@ public class CarRace {
 
     }
     public static void doRace(Car car) {
-        for (int i = 0; i < 3; i++) {
-            car.increaseSpeed();
-        }
+        car.increaseSpeed();
+        car.increaseSpeed();
+        car.increaseSpeed();
 
-        for (int i = 0; i > 2; i++) {
-            car.decreaseSpeed();
-        }
+        car.decreaseSpeed();
+        car.decreaseSpeed();
 
         System.out.println("aktualna prędkość:" + car.getSpeed());
 

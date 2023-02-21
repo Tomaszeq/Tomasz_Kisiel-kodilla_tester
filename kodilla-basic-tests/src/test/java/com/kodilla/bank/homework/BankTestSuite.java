@@ -8,8 +8,7 @@ public class BankTestSuite {
     @Test
     public void testCashMachine() {
         Bank bank = new Bank();
-        String[] cashMachine = bank.cashMachines();
-        assertEquals(0, cashMachine.length);
+        assertEquals(0, CashMachine.length);
 
     }
     @Test
