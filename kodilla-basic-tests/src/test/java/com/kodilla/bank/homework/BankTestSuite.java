@@ -45,7 +45,7 @@ public class BankTestSuite {
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(5, bank.getPaymentQty());
+        assertEquals(500, bank.getPaymentQty());
     }
 
     @Test
