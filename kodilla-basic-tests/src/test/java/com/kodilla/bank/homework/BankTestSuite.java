@@ -87,12 +87,12 @@ public class BankTestSuite {
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(600, bank.getWithdrawalAvg();
+        assertEquals(600, bank.getWithdrawalAvg());
     }
 
     @Test
     public void shouldReturnZeroPaymentAvgForEmptyBank() {
         Bank bank = new Bank();
-        assertEquals(0, bank.getPaymentAvg();
+        assertEquals(0, bank.getPaymentAvg());
     }
 }
