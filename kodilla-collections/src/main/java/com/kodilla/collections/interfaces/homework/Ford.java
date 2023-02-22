@@ -21,4 +21,29 @@ public class Ford implements Car {
     public void decreaseSpeed() {
         this.speed -= 15;
     }
+
+    @Override
+    public int getBrand() {
+        return 0;
+    }
+
+    @Override
+    public int getModel() {
+        return 0;
+    }
+
+    @Override
+    public int getYear() {
+        return 0;
+    }
+
+    @Override
+    public int getColor() {
+        return 0;
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return 0;
+    }
 }

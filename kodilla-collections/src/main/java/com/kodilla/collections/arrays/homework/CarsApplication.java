@@ -3,7 +3,7 @@ import java.util.Random;
 import com.kodilla.collections.interfaces.homework.Car;
 public class CarsApplication {
 
-    private String  brand;
+    private String brand;
     private String model;
     private int year;
     private String color;
@@ -21,6 +21,7 @@ public class CarsApplication {
     }
 
     private static final Random random = new Random();
+
     public static void main(String[] args) {
         Random random = new Random();
         int arraySize = random.nextInt(15) + 1;
@@ -33,6 +34,7 @@ public class CarsApplication {
             System.out.println();
         }
     }
+
     public static Car drawCar() {
 
         String[] brands = {"Ford", "Toyota", "Chevrolet", "Honda", "BMW"};
@@ -43,7 +45,40 @@ public class CarsApplication {
         int colorIndex = random.nextInt(colors.length);
         int year = 1990 + random.nextInt(31);
         int maxSpeed = 120 + random.nextInt(81);
-        Car car = new Car(brands[brandIndex], models[modelIndex], year, colors[colorIndex], maxSpeed);
+        Car car = new Car() {
+            @Override
+            public int getSpeed() {
+                return 0;
+            }
+            @Override
+            public void increaseSpeed() {
+
+            }
+            @Override
+            public void decreaseSpeed() {
+
+            }
+            @Override
+            public int getBrand() {
+                return brandIndex;
+            }
+            @Override
+            public int getModel() {
+                return modelIndex;
+            }
+            @Override
+            public int getYear() {
+                return year;
+            }
+            @Override
+            public int getColor() {
+                return colorIndex;
+            }
+            @Override
+            public int getMaxSpeed() {
+                return maxSpeed;
+            }
+        };
         return car;
     }
 }

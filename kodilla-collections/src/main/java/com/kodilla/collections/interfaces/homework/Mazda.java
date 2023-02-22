@@ -20,4 +20,29 @@ public class Mazda implements Car {
     public void decreaseSpeed() {
         this.speed -= 35;
     }
+
+    @Override
+    public int getBrand() {
+        return 0;
+    }
+
+    @Override
+    public int getModel() {
+        return 0;
+    }
+
+    @Override
+        public int getYear() {
+        return 0;
+    }
+
+    @Override
+    public int getColor() {
+        return 0;
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return 0;
+    }
 }
