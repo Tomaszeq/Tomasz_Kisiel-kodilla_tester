@@ -4,6 +4,8 @@ import com.kodilla.basic_assertion.Calculator;
 public class CashMachine {
     private int[] completedTransactions;
     private int size;
+    public void addTransaction(int i) {
+    }
     public CashMachine() {
         this.completedTransactions = new int[0];
         this.size = 0;
@@ -78,4 +80,6 @@ public class CashMachine {
         }
         return sum / completedTransactions.length;
     }
+
+
 }
