@@ -52,11 +52,9 @@ public class CarsApplication {
             }
             @Override
             public void increaseSpeed() {
-
             }
             @Override
             public void decreaseSpeed() {
-
             }
             @Override
             public int getBrand() {
