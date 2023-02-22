@@ -34,7 +34,7 @@ public class CashMachineTestSuite {
         cashMachine.add(35);
         cashMachine.add(0);
         cashMachine.add(15);
-        assertEquals(150,150);
+        assertEquals(150, cashMachine.getSaldo());
     }
     @Test
     public void testWithdrawalQty() {
@@ -42,7 +42,7 @@ public class CashMachineTestSuite {
         cashMachine.add(100);
         cashMachine.add(200);
         cashMachine.add(400);
-        assertEquals(700,700);
+        assertEquals(700, cashMachine.getWithdrawalQty());
     }
     @Test
     public void testPaymentQty() {
@@ -50,7 +50,7 @@ public class CashMachineTestSuite {
         cashMachine.add(50);
         cashMachine.add(100);
         cashMachine.add(450);
-        assertEquals(600, 600);
+        assertEquals(600, cashMachine.getPaymentQty());
     }
     @Test
     public void testWithdrawalAvg() {
@@ -58,7 +58,7 @@ public class CashMachineTestSuite {
         cashMachine.add(100);
         cashMachine.add(200);
         cashMachine.add(400);
-        assertEquals(433.33, 433.33);
+        assertEquals(433.33, cashMachine.getWithdrawalAvg());
     }
     @Test
     public void testPaymentAvg() {
@@ -66,6 +66,6 @@ public class CashMachineTestSuite {
         cashMachine.add(50);
         cashMachine.add(100);
         cashMachine.add(450);
-        assertEquals(300, 300);
+        assertEquals(300, cashMachine.getPaymentAvg());
     }
 }
