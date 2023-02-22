@@ -21,7 +21,7 @@ public class BankTestSuite {
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(500, 500);
+        assertEquals(500, bank.getSaldo());
     }
 
     @Test
