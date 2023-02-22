@@ -45,4 +45,10 @@ public class Mazda implements Car {
     public int getMaxSpeed() {
         return 0;
     }
+    @Override
+    public String toString() {
+        return "Mazda{" +
+                "speed=" + speed +
+                '}';
+    }
 }

@@ -45,4 +45,10 @@ public class Audi implements Car  {
     public int getMaxSpeed() {
         return 0;
     }
+    @Override
+    public String toString() {
+        return "Audi{" +
+                "speed=" + speed +
+                '}';
+    }
 }

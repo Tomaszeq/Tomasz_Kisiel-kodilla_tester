@@ -46,4 +46,10 @@ public class Ford implements Car {
     public int getMaxSpeed() {
         return 0;
     }
+    @Override
+    public String toString() {
+        return "Ford{" +
+                "speed=" + speed +
+                '}';
+    }
 }
