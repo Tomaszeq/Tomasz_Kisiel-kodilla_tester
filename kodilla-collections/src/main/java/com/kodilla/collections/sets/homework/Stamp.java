@@ -4,40 +4,40 @@ import java.util.HashSet;
 import java.util.Objects;
 
 public class Stamp {
-    private String StampName;
-    private String StampDimensions;
-    private String HaveStamp;
+    private String stampName;
+    private String stampDimensions;
+    private String haveStamp;
     public Stamp (String stampName, String stampDimensions, String haveStamp) {
-        this.StampName = stampName;
-        this.StampDimensions = stampDimensions;
-        this.HaveStamp = haveStamp;
+        this.stampName = stampName;
+        this.stampDimensions = stampDimensions;
+        this.haveStamp = haveStamp;
     }
     public String getStampName() {
-        return StampName;
+        return stampName;
     }
     public String getStampDimensions() {
-        return StampDimensions;
+        return stampDimensions;
     }
     public String getHaveStamp() {
-        return HaveStamp;
+        return haveStamp;
     }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Stamp stamp = (Stamp) o;
-        return Objects.equals(StampName, stamp.StampName) && Objects.equals(StampDimensions, stamp.StampDimensions) && Objects.equals(HaveStamp, stamp.HaveStamp);
+        return Objects.equals(stampName, stamp.stampName) && Objects.equals(stampDimensions, stamp.stampDimensions) && Objects.equals(haveStamp, stamp.haveStamp);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(StampName, StampDimensions, HaveStamp);
+        return Objects.hash(stampName, stampDimensions, haveStamp);
     }
     @Override
     public String toString() {
         return "Stamp{" +
-                "StampName='" + StampName + '\'' +
-                ", StampDimensions='" + StampDimensions + '\'' +
-                ", HaveStamp='" + HaveStamp + '\'' +
+                "StampName='" + stampName + '\'' +
+                ", StampDimensions='" + stampDimensions + '\'' +
+                ", HaveStamp='" + haveStamp + '\'' +
                 '}';
     }
 }
