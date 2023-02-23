@@ -4,8 +4,7 @@ import com.kodilla.basic_assertion.Calculator;
 public class CashMachine {
     private int[] completedTransactions;
     private int size;
-    public void addTransaction(int i) {
-    }
+
     public CashMachine() {
         this.completedTransactions = new int[0];
         this.size = 0;
@@ -59,13 +58,14 @@ public class CashMachine {
             return 0;
         }
         double sum = 0;
-
+        double withdrawalQty = 0;
         for (int i = 0; i < this.completedTransactions.length; i++) {
             if (this.completedTransactions[i] < 0) {
                 sum += this.completedTransactions[i];
+                withdrawalQty++;
             }
         }
-        return sum / completedTransactions.length;
+        return sum / withdrawalQty;
     }
     public double getPaymentAvg() {
         if (this. completedTransactions.length == 0) {
@@ -80,6 +80,4 @@ public class CashMachine {
         }
         return sum / completedTransactions.length;
     }
-
-
 }

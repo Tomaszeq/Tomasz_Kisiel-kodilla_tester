@@ -12,16 +12,16 @@ public class BankTestSuite {
         CashMachine cashMachine1 = new CashMachine();
         CashMachine cashMachine2 = new CashMachine();
 
-        cashMachine1.addTransaction(500);
-        cashMachine1.addTransaction(-200);
-        cashMachine2.addTransaction(1000);
-        cashMachine2.addTransaction(-300);
-        cashMachine2.addTransaction(-500);
+        cashMachine1.add(500);
+        cashMachine1.add(-200);
+        cashMachine2.add(1000);
+        cashMachine2.add(-300);
+        cashMachine2.add(-500);
 
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(0, bank.getSaldo());
+        assertEquals(500, bank.getSaldo());
     }
 
     @Test
@@ -36,16 +36,16 @@ public class BankTestSuite {
         CashMachine cashMachine1 = new CashMachine();
         CashMachine cashMachine2 = new CashMachine();
 
-        cashMachine1.addTransaction(500);
-        cashMachine1.addTransaction(-200);
-        cashMachine2.addTransaction(1000);
-        cashMachine2.addTransaction(-300);
-        cashMachine2.addTransaction(-500);
+        cashMachine1.add(500);
+        cashMachine1.add(-200);
+        cashMachine2.add(1000);
+        cashMachine2.add(-300);
+        cashMachine2.add(-500);
 
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(0, bank.getPaymentQty());
+        assertEquals(2, bank.getPaymentQty());
     }
 
     @Test
@@ -54,16 +54,16 @@ public class BankTestSuite {
         CashMachine cashMachine1 = new CashMachine();
         CashMachine cashMachine2 = new CashMachine();
 
-        cashMachine1.addTransaction(500);
-        cashMachine1.addTransaction(-200);
-        cashMachine2.addTransaction(1000);
-        cashMachine2.addTransaction(-300);
-        cashMachine2.addTransaction(-500);
+        cashMachine1.add(500);
+        cashMachine1.add(-200);
+        cashMachine2.add(1000);
+        cashMachine2.add(-300);
+        cashMachine2.add(-500);
 
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(0, bank.getWithdrawalAvg());
+        assertEquals(-300, bank.getWithdrawalAvg());
     }
 
     @Test
@@ -78,16 +78,16 @@ public class BankTestSuite {
         CashMachine cashMachine1 = new CashMachine();
         CashMachine cashMachine2 = new CashMachine();
 
-        cashMachine1.addTransaction(500);
-        cashMachine1.addTransaction(-200);
-        cashMachine2.addTransaction(1000);
-        cashMachine2.addTransaction(-300);
-        cashMachine2.addTransaction(-500);
+        cashMachine1.add(500);
+        cashMachine1.add(-200);
+        cashMachine2.add(1000);
+        cashMachine2.add(-300);
+        cashMachine2.add(-500);
 
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(0, bank.getWithdrawalAvg());
+        assertEquals(291.66, bank.getPaymentAvg(), 0.1);
     }
 
     @Test

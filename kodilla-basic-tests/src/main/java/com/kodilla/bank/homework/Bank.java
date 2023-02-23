@@ -39,19 +39,17 @@ public class Bank {
         if (this.cashMachines.length == 0) {
             return 0;
         }
-        int sum = 0;
+        double sum = 0;
         for (int i = 0; i < this.cashMachines.length; i++) {
-            if (this.cashMachines[i].getWithdrawalAvg() < 0) {
-                sum += this.cashMachines[i].getWithdrawalQty();
+                sum += this.cashMachines[i].getWithdrawalAvg();
             }
-        }
         return sum / cashMachines.length;
     }
     public double getPaymentAvg() {
         if (this.cashMachines.length == 0) {
             return 0;
         }
-        int sum = 0;
+        double sum = 0;
         for (int i = 0; i < this.cashMachines.length; i++ ) {
             if (this.cashMachines[i].getPaymentAvg() > 0) {
                 sum += this.cashMachines[i].getPaymentAvg();
