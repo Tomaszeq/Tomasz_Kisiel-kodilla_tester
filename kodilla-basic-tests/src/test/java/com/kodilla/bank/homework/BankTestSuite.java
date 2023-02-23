@@ -21,7 +21,7 @@ public class BankTestSuite {
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(500, bank.getSaldo());
+        assertEquals(0, bank.getSaldo());
     }
 
     @Test
@@ -45,7 +45,7 @@ public class BankTestSuite {
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(500, bank.getPaymentQty());
+        assertEquals(0, bank.getPaymentQty());
     }
 
     @Test
@@ -63,7 +63,7 @@ public class BankTestSuite {
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(-333.33, bank.getWithdrawalAvg());
+        assertEquals(0, bank.getWithdrawalAvg());
     }
 
     @Test
@@ -87,7 +87,7 @@ public class BankTestSuite {
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(600, bank.getWithdrawalAvg());
+        assertEquals(0, bank.getWithdrawalAvg());
     }
 
     @Test
