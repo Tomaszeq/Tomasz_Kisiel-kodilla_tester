@@ -1,7 +1,6 @@
 package com.kodilla.collections.adv.exercises.dictionary;
 
 import java.util.*;
-
 public class Dictionary {
     Map<String, List<EnglishWord>> dictionary = new HashMap<>();
     public void addWord(String polishWord, EnglishWord englishWord) {

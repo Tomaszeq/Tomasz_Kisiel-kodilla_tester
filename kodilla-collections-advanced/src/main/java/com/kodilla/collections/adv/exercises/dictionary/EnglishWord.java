@@ -1,7 +1,6 @@
 package com.kodilla.collections.adv.exercises.dictionary;
 
 import java.util.Objects;
-
 public class EnglishWord {
     private PartOfSpeech partOfSpeech;
     private String word;
