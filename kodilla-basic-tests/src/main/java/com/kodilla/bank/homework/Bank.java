@@ -45,6 +45,16 @@ public class Bank {
             }
         return sum / cashMachines.length;
     }
+    public double getWithdrawalQty() {
+        if (this.cashMachines.length ==0) {
+            return 0;
+        }
+        double sum = 0;
+        for (int i = 0; i < this.cashMachines.length; i++) {
+            sum += this.cashMachines[i].getWithdrawalQty();
+        }
+        return sum;
+    }
     public double getPaymentAvg() {
         if (this.cashMachines.length == 0) {
             return 0;

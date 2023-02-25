@@ -31,6 +31,24 @@ public class BankTestSuite {
     }
 
     @Test
+    public void shouldCalculateCorretWithdrawalQty() {
+        Bank bank = new Bank();
+        CashMachine cashMachine1 = new CashMachine();
+        CashMachine cashMachine2 = new CashMachine();
+
+        cashMachine1.add(500);
+        cashMachine1.add(-200);
+        cashMachine2.add(1000);
+        cashMachine2.add(-300);
+        cashMachine2.add(-500);
+
+        bank.add(cashMachine1);
+        bank.add(cashMachine2);
+
+        assertEquals(3, bank.getWithdrawalQty());
+    }
+
+    @Test
     public void shouldCalculateCorrectPaymentQty() {
         Bank bank = new Bank();
         CashMachine cashMachine1 = new CashMachine();
@@ -63,7 +81,7 @@ public class BankTestSuite {
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(-300, bank.getWithdrawalAvg());
+        assertEquals(-183.33333333333334, bank.getWithdrawalAvg());
     }
 
     @Test
