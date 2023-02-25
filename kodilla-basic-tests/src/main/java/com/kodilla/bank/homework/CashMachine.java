@@ -58,14 +58,14 @@ public class CashMachine {
             return 0;
         }
         double sum = 0;
-        double withdrawalQty = 0;
+        double withdrawalAvg = 0;
         for (int i = 0; i < this.completedTransactions.length; i++) {
             if (this.completedTransactions[i] < 0) {
                 sum += this.completedTransactions[i];
-                withdrawalQty++;
+                withdrawalAvg++;
             }
         }
-        return sum / withdrawalQty;
+        return sum / completedTransactions.length;
     }
     public double getPaymentAvg() {
         if (this. completedTransactions.length == 0) {
