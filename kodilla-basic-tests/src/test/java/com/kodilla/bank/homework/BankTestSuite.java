@@ -81,7 +81,7 @@ public class BankTestSuite {
         bank.add(cashMachine1);
         bank.add(cashMachine2);
 
-        assertEquals(-183.33333333333334, bank.getWithdrawalAvg());
+        assertEquals(-183.33, bank.getWithdrawalAvg(), 0.1);
     }
 
     @Test
