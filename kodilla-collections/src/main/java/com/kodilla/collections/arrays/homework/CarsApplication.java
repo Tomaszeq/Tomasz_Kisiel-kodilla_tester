@@ -1,6 +1,11 @@
 package com.kodilla.collections.arrays.homework;
 import java.util.Random;
+
+import com.kodilla.collections.interfaces.homework.Audi;
 import com.kodilla.collections.interfaces.homework.Car;
+import com.kodilla.collections.interfaces.homework.Ford;
+import com.kodilla.collections.interfaces.homework.Mazda;
+
 public class CarsApplication {
 
     private String brand;
@@ -37,46 +42,15 @@ public class CarsApplication {
 
     public static Car drawCar() {
 
-        String[] brands = {"Ford", "Toyota", "Chevrolet", "Honda", "BMW"};
-        String[] models = {"Mustang", "Corolla", "Camaro", "Accord", "M3"};
-        String[] colors = {"Red", "Blue", "Green", "Yellow", "Black"};
-        int brandIndex = random.nextInt(brands.length);
-        int modelIndex = random.nextInt(models.length);
-        int colorIndex = random.nextInt(colors.length);
-        int year = 1990 + random.nextInt(31);
+        int brandIndex = random.nextInt(3);
         int maxSpeed = 120 + random.nextInt(81);
-        Car car = new Car() {
-            @Override
-            public int getSpeed() {
-                return 0;
-            }
-            @Override
-            public void increaseSpeed() {
-            }
-            @Override
-            public void decreaseSpeed() {
-            }
-            @Override
-            public String getBrand() {
-                return brands[brandIndex];
-            }
-            @Override
-            public String getModel() {
-                return models[modelIndex];
-            }
-            @Override
-            public int getYear() {
-                return year;
-            }
-            @Override
-            public String getColor() {
-                return colors[colorIndex];
-            }
-            @Override
-            public int getMaxSpeed() {
-                return maxSpeed;
-            }
-        };
-        return car;
+        if(brandIndex == 0) {
+            return new Audi(maxSpeed);
+        } else if (brandIndex == 1) {
+            return new Ford(maxSpeed);
+        }
+        else {
+            return new Mazda(maxSpeed);
+        }
     }
 }

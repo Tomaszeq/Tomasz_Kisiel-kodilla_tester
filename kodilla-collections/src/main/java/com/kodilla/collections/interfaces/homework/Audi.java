@@ -23,27 +23,7 @@ public class Audi implements Car  {
 
     @Override
     public String getBrand() {
-        return getBrand();
-    }
-
-    @Override
-    public String getModel() {
-        return getModel();
-    }
-
-    @Override
-    public int getYear() {
-        return 0;
-    }
-
-    @Override
-    public String getColor() {
-        return getColor();
-    }
-
-    @Override
-    public int getMaxSpeed() {
-        return 0;
+        return "Audi";
     }
     @Override
     public String toString() {

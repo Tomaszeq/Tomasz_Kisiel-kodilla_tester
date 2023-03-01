@@ -24,28 +24,9 @@ public class Ford implements Car {
 
     @Override
     public String getBrand() {
-        return getBrand();
+        return "Ford";
     }
 
-    @Override
-    public String getModel() {
-        return getModel();
-    }
-
-    @Override
-    public int getYear() {
-        return 0;
-    }
-
-    @Override
-    public String getColor() {
-        return getColor();
-    }
-
-    @Override
-    public int getMaxSpeed() {
-        return 0;
-    }
     @Override
     public String toString() {
         return "Ford{" +

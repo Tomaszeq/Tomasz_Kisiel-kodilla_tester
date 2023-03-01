@@ -23,28 +23,9 @@ public class Mazda implements Car {
 
     @Override
     public String getBrand() {
-        return getBrand();
+        return "Mazda";
     }
 
-    @Override
-    public String getModel() {
-        return getModel();
-    }
-
-    @Override
-        public int getYear() {
-        return 0;
-    }
-
-    @Override
-    public String getColor() {
-        return getColor();
-    }
-
-    @Override
-    public int getMaxSpeed() {
-        return 0;
-    }
     @Override
     public String toString() {
         return "Mazda{" +

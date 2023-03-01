@@ -7,9 +7,6 @@ public class CarUtils {
     public static void describeCar(Car car) {
 
         System.out.println("Brand: " + car.getBrand());
-        System.out.println("Model: " + car.getModel());
-        System.out.println("Year: " + car.getYear());
-        System.out.println("Color: " + car.getColor());
-        System.out.println("Max speed: " + car.getMaxSpeed() + " km/h");
+        System.out.println("Speed: " + car.getSpeed() + " km/h");
     }
 }
