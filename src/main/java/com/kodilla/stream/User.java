@@ -1,7 +1,5 @@
 package com.kodilla.stream;
-
 import java.util.Objects;
-
 public class User {
     private String userName;
     private int age;
