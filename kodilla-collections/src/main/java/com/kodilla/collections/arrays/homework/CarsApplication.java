@@ -57,20 +57,20 @@ public class CarsApplication {
             public void decreaseSpeed() {
             }
             @Override
-            public int getBrand() {
-                return brandIndex;
+            public String getBrand() {
+                return brands[brandIndex];
             }
             @Override
-            public int getModel() {
-                return modelIndex;
+            public String getModel() {
+                return models[modelIndex];
             }
             @Override
             public int getYear() {
                 return year;
             }
             @Override
-            public int getColor() {
-                return colorIndex;
+            public String getColor() {
+                return colors[colorIndex];
             }
             @Override
             public int getMaxSpeed() {

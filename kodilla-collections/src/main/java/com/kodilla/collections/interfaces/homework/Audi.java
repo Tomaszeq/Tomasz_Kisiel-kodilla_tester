@@ -22,13 +22,13 @@ public class Audi implements Car  {
     }
 
     @Override
-    public int getBrand() {
-        return 0;
+    public String getBrand() {
+        return getBrand();
     }
 
     @Override
-    public int getModel() {
-        return 0;
+    public String getModel() {
+        return getModel();
     }
 
     @Override
@@ -37,8 +37,8 @@ public class Audi implements Car  {
     }
 
     @Override
-    public int getColor() {
-        return 0;
+    public String getColor() {
+        return getColor();
     }
 
     @Override

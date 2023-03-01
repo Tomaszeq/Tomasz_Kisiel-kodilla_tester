@@ -6,13 +6,13 @@ public interface Car {
     void increaseSpeed();
     void decreaseSpeed();
 
-    int getBrand();
+    String getBrand();
 
-    int getModel();
+    String getModel();
 
     int getYear();
 
-    int getColor();
+    String getColor();
 
     int getMaxSpeed();
 }
