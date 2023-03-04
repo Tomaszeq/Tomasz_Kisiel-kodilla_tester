@@ -10,7 +10,6 @@ public class UsersManagerTest {
     @Test
     public void testFilterChemistGroupUsernames() {
         List<String> usernames = UsersManager.filterChemistGroupUsernames();
-
         List<String> expectedUsernames = new ArrayList<>();
         expectedUsernames.add("Walter White");
         expectedUsernames.add("Gala Boetticher");
@@ -31,10 +30,7 @@ public class UsersManagerTest {
     }
     @Test
     public void testFilterUsersWithLessThan150Posts() {
-
         List<User> prolificUsers = UsersManager.filterUsersWithLessThan150Posts();
-
         assertEquals(5, prolificUsers.size());
-
     }
 }
