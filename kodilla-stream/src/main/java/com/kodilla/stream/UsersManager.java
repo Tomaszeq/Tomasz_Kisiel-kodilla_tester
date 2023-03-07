@@ -7,7 +7,7 @@ public class UsersManager {
         System.out.println(chemistGroupUsernames);
     }
     public static List<String> filterChemistGroupUsernames() {
-        List<String> usernames = UsersRepository.getUserList()
+        List<String> usernames = UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getGroup().equals("Chemists"))
                 .map(UsersManager::getUserName)
@@ -19,13 +19,13 @@ public class UsersManager {
         return user.getUserName();
     }
     public static List<User> filterUsersOlderThanAge(int age) {
-        return UsersRepository.getUserList()
+        return UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getAge() > age)
                 .collect(Collectors.toList());
     }
     public static List<User> filterUsersWithLessThan150Posts() {
-        List<User> prolificUsers = UsersRepository.getUserList()
+        List<User> prolificUsers = UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getNumberOfPost() < 150)
                 .collect(Collectors.toList());
