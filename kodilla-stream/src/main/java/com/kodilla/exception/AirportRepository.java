@@ -2,7 +2,6 @@ package com.kodilla.exception;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class AirportRepository {
     private Map<String, Boolean> getListOfAirports() {
