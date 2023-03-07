@@ -36,6 +36,6 @@ public class ForumStatsTest {
 
         double result = ForumStats.getAveragePostsForUsersBelowAge(users, 40);
 
-        assertEquals(2382.0, result);
+        assertEquals(2382.0, result, 0.01);
     }
 }
