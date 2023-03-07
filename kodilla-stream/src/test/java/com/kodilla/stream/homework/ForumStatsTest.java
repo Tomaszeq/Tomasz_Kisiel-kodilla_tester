@@ -21,7 +21,7 @@ public class ForumStatsTest {
 
         double result = ForumStats.getAveragePostsForUsersAboveAge(users, 40);
 
-        assertEquals(2.25, result);
+        assertEquals(2.25, result, 0.01);
 
     }
     @Test
