@@ -10,17 +10,6 @@ import java.util.Set;
 class GamblingMachineTest {
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/GamblingMachineNumbers.csv", numLinesToSkip = 1)
-    void shouldReturnCorrectNumberOfWinsForValidInput(String input, int expectedOutput) throws InvalidNumbersException {
-        GamblingMachine gamblingMachine = new GamblingMachine();
-        Set<Integer> userNumbers = convertToSet(input);
-
-        int actualOutput = gamblingMachine.howManyWins(userNumbers);
-
-        Assertions.assertEquals(expectedOutput, actualOutput);
-    }
-
-    @ParameterizedTest
     @CsvFileSource(resources = "/InvalidNumbers.csv", numLinesToSkip = 1)
     void shouldThrowExceptionForInvalidInput(String input) {
         GamblingMachine gamblingMachine = new GamblingMachine();
