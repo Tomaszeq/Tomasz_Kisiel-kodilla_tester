@@ -1,20 +1,15 @@
 package com.kodilla.parametrized_tests.homework;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 class PersonTestSuite {
-    @Test
-    public void shouldReturnCorrectBMIForTestData() {
-        List<Person> testData = PersonTestData.getTestData();
-        String[] expectedBMIResults = {"Very severely underweight", "Normal (healthy weight)", "Overweight",
-                "Overweight", "Overweight", "Obese Class I (Moderately obese)"};
+    @ParameterizedTest
+    @CsvFileSource(resources = "/bmiTest.csv", numLinesToSkip = 1)
+    public void shouldReturnCorrectBMIForTestData(String heightInMeters, String weightInKilogram, String expectedBmi) {
+        Person person = new Person(Double.valueOf(heightInMeters), Double.valueOf(weightInKilogram));
+        Assertions.assertEquals(expectedBmi, person.getBMI());
 
-        for (int i = 0; i < testData.size(); i++) {
-            assertEquals(expectedBMIResults[i], testData.get(i).getBMI());
         }
     }
-}

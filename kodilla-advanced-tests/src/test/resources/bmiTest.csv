@@ -1,0 +1,12 @@
+height,weight,expectedBmi
+1.50,30,Very severely underweight
+1.55,37,Severely underweight
+1.60,45,Underweight
+1.60,160,Obese Class VI (Hyper Obese)
+1.65,55,Normal (healthy weight)
+1.70,80,Overweight
+1.75,100,Obese Class I (Moderately obese)
+1.80,120,Obese Class II (Severely obese)
+1.85,150,Obese Class III (Very severely obese)
+1.90,170,Obese Class IV (Morbidly Obese)
+1.90,190,Obese Class V (Super Obese)
