@@ -24,7 +24,8 @@ public class StringManipulatorTestSuite {
     public void shouldCalculateStringLengthWithoutSpaces(String input, int expected) {
         assertEquals(expected, manipulator.getStringLengthWithoutSpaces(input));
     }
-    private static Stream<Arguments> provideStringsForTestingLength() {
+
+    private static Stream<Arguments> shouldCalculateStringLengthWithoutSpaces() {
         return Stream.of(
                 Arguments.of("test", 4),
                 Arguments.of("OtHEr ", 5),
