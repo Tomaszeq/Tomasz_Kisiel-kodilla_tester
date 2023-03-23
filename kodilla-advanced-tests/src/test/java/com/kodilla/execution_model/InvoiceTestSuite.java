@@ -79,5 +79,4 @@ public class InvoiceTestSuite {
     public static void displayGoodByeMessage() {
         System.out.println("Finishing testing");
     }
-
 }
