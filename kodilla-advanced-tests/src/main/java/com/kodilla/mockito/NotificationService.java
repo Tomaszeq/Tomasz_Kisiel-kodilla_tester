@@ -18,6 +18,5 @@ public class NotificationService {
     }
     public void removeSubscriber(Client client) {
         this.clients.remove(client);
-
     }
 }

@@ -28,9 +28,7 @@ public class NotificationServiceTestSuite {
     @Test
     public void subscribedClientShouldReceiveNotification() {
         notificationService.addSubscriber(client);
-
         notificationService.sendNotification(notification);
-
         Mockito.verify(client, Mockito.times(1)).receive(notification);
     }
 
