@@ -1,11 +1,13 @@
 package com.kodilla.execution_model.homework;
 
+import java.time.LocalDate;
+
 public class Order {
     private double orderValue;
-    private double orderDate;
+    private LocalDate orderDate;
     private String userLogin;
 
-    public Order(double orderValue, double orderDate, String userLogin) {
+    public Order(double orderValue, LocalDate orderDate, String userLogin) {
         this.orderValue = orderValue;
         this.orderDate = orderDate;
         this.userLogin = userLogin;
@@ -15,7 +17,7 @@ public class Order {
         return orderValue;
     }
 
-    public double getOrderDate() {
+    public LocalDate getOrderDate() {
         return orderDate;
     }
 
@@ -27,7 +29,7 @@ public class Order {
         this.orderValue = orderValue;
     }
 
-    public void setOrderDate(double orderDate) {
+    public void setOrderDate(LocalDate orderDate) {
         this.orderDate = orderDate;
     }
 

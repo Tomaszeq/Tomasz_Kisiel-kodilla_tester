@@ -1,7 +1,7 @@
 package com.kodilla.execution_model.homework;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Shop {
@@ -15,12 +15,12 @@ public class Shop {
         orders.add(order);
     }
 
-    public List<Order> getOrdersByDate(Date startDate, Date endDate) {
+    public List<Order> getOrdersByDate(LocalDate startDate, LocalDate endDate) {
         List<Order> ordersByDate = new ArrayList<>();
         for (Order order : orders) {
-            Date orderDate = new Date((long) order.getOrderDate());
-            if (orderDate.compareTo(startDate) >= 0 && orderDate.compareTo(endDate) <= 0) {
+            if (order.getOrderDate().isAfter(startDate)  && order.getOrderDate().isBefore(endDate)) {
                 ordersByDate.add(order);
+
             }
         }
         return ordersByDate;
@@ -49,3 +49,5 @@ public class Shop {
         return totalOrderValue;
     }
 }
+
+
