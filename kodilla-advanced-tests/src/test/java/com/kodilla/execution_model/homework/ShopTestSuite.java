@@ -1,81 +1,70 @@
 package com.kodilla.execution_model.homework;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ShopTestSuite {
-    private Shop shop;
-
-    @BeforeEach
-    public void setUp() {
-        shop = new Shop();
-    }
-
     @Test
-    public void shouldReturnOneOrderWhenAddingTwoSameOrders() {
-        Set<Order> orders = new HashSet<>();
-        orders.add(new Order(2.999, LocalDate.of(2023, 03, 02), "user02"));
-        orders.add(new Order(2.999, LocalDate.of(2023, 03, 02), "user02"));
-
-        Set<Order> uniqueOrders = ShoppingList.getUniqueOrders(orders);
-        assertEquals(1, uniqueOrders.size());
-    }
-
-    @BeforeEach
-    public void initializeShop() {
-        shop.addOrder(new Order(1.0, LocalDate.of(2023, 3, 1), "user01"));
-        shop.addOrder(new Order(2.0, LocalDate.of(2023, 3, 2), "user02"));
-        shop.addOrder(new Order(3.0, LocalDate.of(2023, 3, 3), "user03"));
-        shop.addOrder(new Order(4.0, LocalDate.of(2023, 3, 4), "user04"));
-        shop.addOrder(new Order(5.0, LocalDate.of(2023, 3, 5), "user05"));
-        shop.addOrder(new Order(2.0, LocalDate.of(2023, 3, 2), "user02"));
-        shop.addOrder(new Order(5.0, LocalDate.of(2023, 3, 6), "user06"));
-        shop.addOrder(new Order(0.0, LocalDate.of(2023, 3, 7), "user00"));
-    }
-
-    @Test
-    public void shouldAddOrderToShop() {
-        // given
-        Order order = new Order(10.0, LocalDate.of(2023, 3, 10), "user10");
-
-        // when
+    void shouldAddAndCountOrder() {
+        //given
+        Shop shop = new Shop();
+        Order order = new Order("Laptop", 1, LocalDate.of(2023, 03, 30), 5000.0);
+        //when
         shop.addOrder(order);
-
-        // then
-        assertEquals(9, shop.getNumberOfOrders());
+        //then
+        assertEquals(1, shop.getNumberOfOrders());
     }
-
     @Test
-    public void shouldGetOrdersByDateRange() {
-        // given
-        LocalDate startDate = LocalDate.of(2023, 3, 2);
-        LocalDate endDate = LocalDate.of(2023, 3, 5);
+    void shouldFindOrdersFromRangeOfDates() {
+        //given
+        Shop shop = new Shop();
+        Order order1 = new Order("Laptop", 1, LocalDate.of(2022, 01, 29), 5000.0);
+        Order order2 = new Order("Mobile Phone", 2, LocalDate.of(2022, 02, 28), 4000.0);
+        Order order3 = new Order("Watch", 3, LocalDate.of(2022, 03, 27), 2000.0);
 
-        // when
-        List<Order> ordersByDate = shop.getOrdersByDate(startDate, endDate);
-
-        // then
-        assertEquals(2, ordersByDate.size());
+        shop.addOrder(order1);
+        shop.addOrder(order2);
+        shop.addOrder(order3);
+        //when
+        List<Order> result = shop.findOrdersFromDatesRange(LocalDate.of(2022,01,01), LocalDate.of(2022,02,28));
+        //then
+        assertEquals(2, result.size());
     }
-
     @Test
-    public void shouldGetOrdersByValueRange() {
-        // given
-        double minValue = 1.9;
-        double maxValue = 5.9;
+    void shouldFindOrdersFromRangeOfValues() {
+        //given
+        Shop shop = new Shop();
+        Order order1 = new Order("Laptop", 1, LocalDate.of(2023, 03, 29), 5000.0);
+        Order order2 = new Order("Mobile Phone", 2, LocalDate.of(2023, 03, 28), 4000.0);
+        Order order3 = new Order("Watch", 3, LocalDate.of(2023, 03, 27), 2000.0);
 
-        // when
-        List<Order> ordersByValue = shop.getOrdersByValueRange(minValue, maxValue);
+        shop.addOrder(order1);
+        shop.addOrder(order2);
+        shop.addOrder(order3);
+        //when
+        List<Order> result = shop.findOrdersFromValuesRange(1000.0, 8000.0);
+        //then
+        assertEquals(3, result.size());
+    }
+    @Test
+    void shouldCalculateValueOfOrders() {
+        //given
+        Shop shop = new Shop();
+        Order order1 = new Order("Laptop", 1, LocalDate.of(2023, 03, 29), 5000.0);
+        Order order2 = new Order("Mobile Phone", 2, LocalDate.of(2023, 03, 28), 4000.0);
+        Order order3 = new Order("Watch", 3, LocalDate.of(2023, 03, 27), 2000.0);
 
-        // then
-        assertEquals(6, ordersByValue.size());
-
+        shop.addOrder(order1);
+        shop.addOrder(order2);
+        shop.addOrder(order3);
+        //when
+        double result = shop.calculateValueOfOrders();
+        //then
+        assertEquals(19000.0, result, 0.001);
     }
 }
