@@ -25,7 +25,7 @@ class BookController {
     public void addBook(@RequestBody BookDto bookDto) {
         bookService.addBook(bookDto);
     }
-    @DeleteMapping(value = "/books")
+    @DeleteMapping
     public void deleteBook(@PathVariable BookDto bookDto) {
         bookService.deleteBook(bookDto);
     }
