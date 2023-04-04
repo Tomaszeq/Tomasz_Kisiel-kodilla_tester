@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BookControllerTest {
 
@@ -31,12 +30,15 @@ class BookControllerTest {
     }
     @Test
     void shouldAddBook() {
+        //given
         BookService bookServiceMock = Mockito.mock(BookService.class);
         BookController bookController = new BookController(bookServiceMock);
         BookDto bookDto = new BookDto("Title", "Author");
 
+        //when
         bookController.addBook(bookDto);
 
-        assertEquals(1, bookServiceMock.getBooks().size());
+        //then
+        Mockito.verify(bookServiceMock, Mockito.times(1)).addBook(bookDto);
     }
 }
