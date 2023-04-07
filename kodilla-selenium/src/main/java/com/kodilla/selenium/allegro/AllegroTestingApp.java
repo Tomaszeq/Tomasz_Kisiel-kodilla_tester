@@ -4,7 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class AllegroTestingApp {
     public static void main(String[] args) {
@@ -12,13 +16,23 @@ public class AllegroTestingApp {
         WebDriver driver = new ChromeDriver();
         driver.get("https://allegro.pl/");
 
-        WebElement electronicsCategory = driver.findElement(By.xpath("//div[@class=\"mp7g_oh mr3m_1 s4kyg\" and @align=\"/kategorie\"]"));
+        WebElement electronicsCategory = driver.findElement(By.cssSelector("div[data-box-name=\"categories container\"] button[data-role=\"filters-dropdown-toggle\"]"));
         Select optionValue = new Select(electronicsCategory);
         optionValue.selectByIndex(3);
 
-
-        WebElement inputField = driver.findElement(By.xpath("//div[contains@align=\"szukasz?\""));
+        WebElement inputField = driver.findElement(By.cssSelector("input[type=\"search\"]"));
         inputField.sendKeys("mavic mini");
         inputField.submit();
+
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("section>article")));
+
+        List<WebElement> productsList = driver.findElements(By.cssSelector("section>article"));
+
+        for (WebElement product : productsList) {
+            System.out.println(product.getText());
+        }
+
+        driver.quit();
     }
 }
