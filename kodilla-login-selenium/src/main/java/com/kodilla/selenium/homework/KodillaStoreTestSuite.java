@@ -7,6 +7,8 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static org.junit.Assert.assertEquals;
+
 public class KodillaStoreTestSuite {
 
     private WebDriver driver;
@@ -28,7 +30,7 @@ public class KodillaStoreTestSuite {
         KodillaStore store = new KodillaStore(driver);
         store.search("Notebook");
         int resultsCount = store.getResultsCount();
-        Assert.assertEquals(5, resultsCount);
+        assertEquals(5, resultsCount);
     }
 
     @Test
@@ -36,7 +38,7 @@ public class KodillaStoreTestSuite {
         KodillaStore store = new KodillaStore(driver);
         store.search("School");
         int resultsCount = store.getResultsCount();
-        Assert.assertEquals(1, resultsCount);
+        assertEquals(1, resultsCount);
     }
 
     @Test
@@ -44,7 +46,7 @@ public class KodillaStoreTestSuite {
         KodillaStore store = new KodillaStore(driver);
         store.search("Brand");
         int resultsCount = store.getResultsCount();
-        Assert.assertEquals(1, resultsCount);
+        assertEquals(1, resultsCount);
     }
 
     @Test
@@ -52,7 +54,7 @@ public class KodillaStoreTestSuite {
         KodillaStore store = new KodillaStore(driver);
         store.search("Business");
         int resultsCount = store.getResultsCount();
-        Assert.assertEquals(0, resultsCount);
+        assertEquals(0, resultsCount);
     }
 
     @Test
@@ -60,7 +62,7 @@ public class KodillaStoreTestSuite {
         KodillaStore store = new KodillaStore(driver);
         store.search("Gaming");
         int resultsCount = store.getResultsCount();
-        Assert.assertEquals(1, resultsCount);
+        assertEquals(1, resultsCount);
     }
 
     @Test
@@ -68,7 +70,7 @@ public class KodillaStoreTestSuite {
         KodillaStore store = new KodillaStore(driver);
         store.search("Powerful");
         int resultsCount = store.getResultsCount();
-        Assert.assertEquals(0, resultsCount);
+        assertEquals(0, resultsCount);
     }
 
     @Test
@@ -76,7 +78,7 @@ public class KodillaStoreTestSuite {
         KodillaStore store = new KodillaStore(driver);
         store.search("NOTEBOOK");
         int resultsCount = store.getResultsCount();
-        Assert.assertEquals(2, resultsCount);
+        assertEquals(2, resultsCount);
     }
 
     @Test
@@ -84,7 +86,7 @@ public class KodillaStoreTestSuite {
         KodillaStore store = new KodillaStore(driver);
         store.search("notebook");
         int resultsCount = store.getResultsCount();
-        Assert.assertEquals(2, resultsCount);
+        assertEquals(2, resultsCount);
     }
 
     @Test
@@ -92,6 +94,6 @@ public class KodillaStoreTestSuite {
         KodillaStore store = new KodillaStore(driver);
         store.search("NoTeBoOk");
         int resultsCount = store.getResultsCount();
-        Assert.assertEquals(2, resultsCount);
+        assertEquals(2, resultsCount);
     }
 }
