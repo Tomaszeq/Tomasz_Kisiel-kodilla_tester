@@ -32,8 +32,8 @@ public class KodillaLoginPom {
         emailField.sendKeys(email);
         passwordField.sendKeys(password);
         loginButton.click();
-        String alertMessage = driver.switchTo().alert().getText();
-        String message = alertMessage.replace(alertMessage.charAt(5), 's');
+        String alert = driver.switchTo().alert().getText();
+        String message = alert.replace(alert.charAt(5),'s');
         driver.switchTo().alert().dismiss();
         return message.equals("Jestes teraz zalogowany!");
     }
