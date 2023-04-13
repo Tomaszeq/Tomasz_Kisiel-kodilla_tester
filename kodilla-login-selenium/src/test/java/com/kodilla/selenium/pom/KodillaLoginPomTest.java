@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
- class KodillaLoginPomTest {
+class KodillaLoginPomTest {
 
     KodillaLoginPom loginPom;
 
@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
     }
 
     @Test
-     void testLoginPage_CheckErrorValidation() {
+    void testLoginPage_CheckErrorValidation() {
         String email = "test@toniedziala.pl";
         String password = "password";
         boolean loggedIn = loginPom.login(email, password);
@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
     }
 
     @Test
-     void testLoginPage_CheckPositiveValidation() {
+    void testLoginPage_CheckPositiveValidation() {
         String email = "test@kodilla.com";
         String password = "kodilla123";
         boolean loggedIn = loginPom.login(email, password);
