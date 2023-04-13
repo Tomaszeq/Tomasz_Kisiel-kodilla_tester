@@ -19,7 +19,6 @@ public class KodillaStore extends StoreAbstract {
     public void search(String phrase) {
         WebElement searchField = driver.findElement(By.xpath("//input[@name=\"search\"]"));
         searchField.sendKeys(phrase);
-        //searchField.submit();
     }
 
     public int getResultsCount() {
