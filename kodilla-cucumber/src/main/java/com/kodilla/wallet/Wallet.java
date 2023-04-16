@@ -6,12 +6,14 @@ public class Wallet {
     public Wallet(){
 
     }
-    public void deposit(int money){
+    public void deposit(int money) {
         this.balance += money;
-
     }
-    public int getBalance(){
+    public int getBalance() {
         return balance;
+    }
+    public void debit(int money) {
+        this.balance -= money;
     }
 }
 

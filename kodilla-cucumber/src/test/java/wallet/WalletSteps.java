@@ -39,6 +39,12 @@ public class WalletSteps {
         wallet.deposit(2000);
         Assertions.assertEquals( 2000, wallet.getBalance());
     }
+    @Given("there is $100 in my wallet")
+    public void there_is_$100_in_my_wallet() {
+        this.amount = 100;
+        wallet.debit(100);
+        Assertions.assertEquals(-100, wallet.getBalance());
+    }
     @When("I request {int}")
     public void i_request(Integer int1) {
         Cashier cashier = new Cashier(cashSlot);
@@ -59,8 +65,38 @@ public class WalletSteps {
         Cashier cashier = new Cashier(cashSlot);
         cashier.withdraw(wallet, this.withdraw);
     }
+    @When("I withdraw $200")
+    public void i_withdraw_$200() {
+        Cashier cashier = new Cashier(cashSlot);
+        cashier.withdraw(wallet, this.withdraw);
+    }
+    @When("I check the balance of my wallet")
+    public void i_check_the_balance_of_my_wallet() {
+        Cashier cashier = new Cashier(cashSlot);
+        cashier.withdraw(wallet, 100);
+    }
     @Then("should be dispensed")
     public void should_be_dispensed() {
         Assertions.assertEquals(this.withdraw, cashSlot.getContents());
+    }
+    @Then("the balance of my wallet should be ${int}")
+    public void the_balance_of_my_wallet_should_be_$(Integer int1) {
+        this.amount = 170;
+        wallet.debit(170);
+        Assertions.assertEquals(30,  wallet.getBalance());
+    }
+    @Then("nothing should be dispensed")
+    public void nothing_should_be_dispensed() {
+        Assertions.assertEquals(this.withdraw, cashSlot.getContents());
+    }
+    @Then("I should be told that I don't have enough money in my wallet")
+    public void i_should_be_told_that_i_dont_have_enouth_money_in_my_wallet() {
+        Assertions.assertEquals(this.withdraw, cashSlot.getContents());
+    }
+    @Then("I should see that the balance is ${int}")
+    public void i_should_see_that_the_balance_is_$(Integer int1) {
+        this.amount = 100;
+        wallet.getBalance();
+        Assertions.assertEquals(100, cashSlot.getContents());
     }
 }
