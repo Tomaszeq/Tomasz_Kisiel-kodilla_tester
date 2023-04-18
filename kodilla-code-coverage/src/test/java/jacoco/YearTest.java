@@ -3,20 +3,32 @@ package jacoco;
 import com.kodilla.jacoco.Year;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class YearTest {
+class YearTest {
 
     @Test
-    public void shouldBeLeapYearIfDivisibleBy400() {
+    void shouldBeLeapYearIfDivisibleBy4AndNotDivisibleBy100() {
+        Year year = new Year(2008);
+        assertTrue(year.isLeap());
+    }
 
-        //given
-        Year year = new Year(1600);
+    @Test
+    void shouldNotBeLeapYearIfNotDivisibleBy4() {
+        Year year = new Year(2009);
+        assertFalse(year.isLeap());
+    }
 
-        //when
-        boolean isLeapYear = year.isLeap();
+    @Test
+    void shouldBeLeapYearIfDivisibleBy400() {
+        Year year = new Year(2000);
+        assertTrue(year.isLeap());
+    }
 
-        //then
-        assertTrue(isLeapYear);
+    @Test
+    void shouldNotBeLeapYearIfDivisibleBy100ButNotBy400() {
+        Year year = new Year(1700);
+        assertFalse(year.isLeap());
     }
 }
