@@ -91,19 +91,44 @@ class DbManagerTestSuite {
         return count;
     }
     @Test
-    void testSelectUsersAndPosts() throws SQLException {
-        String query = "SELECT u.FIRSTNAME, u.LASTNAME " +
-                "FROM USERS u JOIN POSTS p ON u.ID = p.USER_ID " +
-                "GROUP BY u.ID " +
-                "HAVING COUNT(*) >= 2";
-        Statement statement = createStatement();
-        ResultSet resultSet = statement.executeQuery(query);
-
-        List<String> usersWithTwoOrMorePosts = new ArrayList<>();
-        while (resultSet.next()) {
-            String firstName = resultSet.getString("FIRSTNAME");
-            String lastName = resultSet.getString("LASTNAME");
-            usersWithTwoOrMorePosts.add(firstName + " " + lastName);
+    public void testSelectUsersAndPosts() throws SQLException {
+        //Given
+        DbManager dbManager = DbManager.getInstance();
+        String countQuery = "SELECT COUNT(*) FROM USERS";
+        Statement statement = dbManager.getConnection().createStatement();
+        ResultSet rs = statement.executeQuery(countQuery);
+        int count = 0;
+        while (rs.next()) {
+            count = rs.getInt("COUNT(*)");
         }
+        String sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Zara', 'Ali')";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Otman', 'Use')";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Mark', 'Boq')";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Uli', 'Wimer')";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Oli', 'Kosiw')";
+        statement.executeUpdate(sql);
+
+        //When
+        String sqlQuery = "SELECT * FROM USERS";
+        statement = dbManager.getConnection().createStatement();
+        rs = statement.executeQuery(sqlQuery);
+
+        //Then
+        int counter = 0;
+        while (rs.next()) {
+            System.out.println(rs.getInt("ID") + ", " +
+                    rs.getString("FIRSTNAME") + ", " +
+                    rs.getString("LASTNAME"));
+            counter++;
+        }
+        int expected = count + 5;
+        Assertions.assertEquals(expected, counter);
+
+        rs.close();
+        statement.close();
     }
 }
