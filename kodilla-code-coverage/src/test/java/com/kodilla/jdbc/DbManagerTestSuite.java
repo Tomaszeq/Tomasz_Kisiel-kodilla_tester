@@ -10,12 +10,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 import java.sql.SQLException;
 
+import static com.kodilla.jdbc.DbManager.getInstance;
+
 class DbManagerTestSuite {
     private static DbManager dbManager;
 
     @BeforeAll
     public static void setup() throws SQLException {
-        dbManager = DbManager.getInstance();
+        dbManager = getInstance();
     }
 
     @Test
@@ -93,7 +95,7 @@ class DbManagerTestSuite {
     @Test
     public void testSelectUsersAndPosts() throws SQLException {
         //Given
-        DbManager dbManager = DbManager.getInstance();
+        DbManager dbManager = getInstance();
         String countQuery = "SELECT COUNT(*) FROM USERS";
         Statement statement = dbManager.getConnection().createStatement();
         ResultSet rs = statement.executeQuery(countQuery);
